@@ -4,8 +4,6 @@ body {  height: 100% }
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -36,7 +34,7 @@ p {
 /* visually hide content  */
 
 .visually-hidden {
-  /*http: //developer.yahoo.com/blogs/ydn/posts/2012/10/clip-your-hidden-content-for-better-accessibility/*/;;
+  /*http: //developer.yahoo.com/blogs/ydn/posts/2012/10/clip-your-hidden-content-for-better-accessibility/*/
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
   /* IE6, IE7 */
@@ -85,7 +83,9 @@ p {
   margin-right: 0.625rem;
   margin-top: auto;
   margin-bottom: auto;
-  align-self: flex-end;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
   color: #ECF0F1;
 }
 
@@ -98,12 +98,16 @@ p {
 /* ===[ Menu Button Container ]=== */
 
 .header-nav--menu-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   visibility: visible;
   background: #333333;
   min-width: 100%;
   height: 3.125em;
-  justify-content: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   padding: 0.4375rem 0.3125rem;
@@ -121,7 +125,9 @@ p {
   margin-right: 0.625rem;
   margin-top: auto;
   margin-bottom: auto;
-  align-self: flex-end;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
 }
 
 /* mobile first nav  */
@@ -136,11 +142,17 @@ p {
 
 @media screen and (min-width: 50em) { 
     .navigation {
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
       height: 6.25rem;
       list-style: none;
-      justify-content: center;
-      align-items: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
     }
 }
 
@@ -179,7 +191,9 @@ p {
 
 .header-nav-name {
   color: #ECF0F1;
-  align-self: flex-start;
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
   margin-top: 0;
   font-size: 1.5625rem;
   padding-left: 0.625rem;
@@ -194,8 +208,12 @@ p {
 }
 
 .navigation.open {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background: #333333;
   width: 100%;
   overflow: hidden;
@@ -208,14 +226,20 @@ p {
 /* give the site a "sticky footer" */
 
 .flex-site-wrapper {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   height: 100%;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 
 .main {
-  flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: 100%;
   padding: 0.625em 1.875em;
   margin-top: 0.938em;
