@@ -1,0 +1,24 @@
+
+//  This may promote the layer to a composited
+//  layer.
+//  Replace with will-change when available
+@mixin promote-layer() {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+@mixin border-button() {
+    background: none;
+    border-width: rem-calc(2);
+    border-style: solid;
+}
+
+// mixin to hide from screen and screen readers... or use the placeholder class in base/_a11y.scss
+@mixin hide-screen-readers() {
+    display: none;
+    visibility: hidden;
+}
+
+
+
+
