@@ -1,0 +1,77 @@
+
+.header-navigation {
+  @include promote-layer();
+  background-color: $oil;
+}
+
+.navigation {
+  display: none;
+  @media screen and (min-width: 50em) {
+    display: flex;
+    height: rem-calc(100);
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.navigation.open {
+  display: flex;
+  flex-direction: column;
+  background: $oil;
+  width: 100%;
+  overflow: hidden;
+  margin-left: 0;
+  list-style: none;
+}
+
+.navigation--item {
+  padding: rem-calc(15) rem-calc(20);
+  //transition: background-color .3s; // I do not like the way this looks... scrapping for now.
+  &:focus {
+    outline: 1px solid $header-nav-list-item-bg-hover;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $header-nav-list-item-bg-hover;
+    a {
+      color: $header-nav-anchor-color-hover;
+
+    }
+  }
+  a {
+    color: $header-nav-link-color;
+    line-height: inherit;
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $header-nav-list-item-bg-hover;
+      color: $header-nav-anchor-color-hover;
+      outline: 1px solid $header-nav-list-item-bg-hover;
+    }
+  }
+}
+
+/* Navigation Menu Button */
+.navigation--menuBtn {
+  color: $header-nav-link-color;
+  margin-left: auto;
+}
+
+.header-nav-name {
+  color: $header-nav-link-color;
+  align-self: flex-start;
+  margin-top: 0;
+  font-size: rem-calc(25);
+  padding-left: rem-calc(10);
+  @media screen and (max-width: 14.813em) {
+    font-size: rem-calc(15);
+  }
+  @media screen and (min-width: 14.875em) and (max-width: 18.688em) {
+    font-size: rem-calc(18);
+  }
+}
+
