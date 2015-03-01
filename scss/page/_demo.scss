@@ -1,0 +1,32 @@
+/* =============[   For Demo Purposes   ]=============*/
+
+/* give the site a "sticky footer" */
+
+//.flex-site-wrapper {
+//  display: -webkit-flex;
+//  display: -ms-flexbox;
+//  display: flex;
+//  height: 100%;
+//  -webkit-flex-direction: column;
+//  -ms-flex-direction: column;
+//  flex-direction: column;
+//}
+
+.main {
+
+  width: 100%;
+  padding: 0.625em 0.938em;
+  @media screen and (min-width: 50em) {
+    padding: 0.625em 1.875em;
+  }
+  margin-top: 0.938em;
+}
+
+// cant get sticky footer to play nice currently... I don't have time to mess with it right now :(
+
+//footer {
+//  flex: none;
+//  background-color: $oil;
+//  color: $header-nav-link-color;
+//  padding: 0.625em 1.875em;
+//}
