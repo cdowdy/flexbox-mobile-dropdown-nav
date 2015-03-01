@@ -1,0 +1,33 @@
+/* Menu Button Container */
+.header-nav--menu-container {
+  display: flex;
+  //flex: 1 0 auto; /* for the demo's sticky footer */
+  visibility: visible;
+  background: $oil;
+  min-width: 100%;
+  height: 3.125em;
+  justify-content: center;
+  @include promote-layer();
+  padding: rem-calc(7) rem-calc(5);
+  @media screen and (min-width: 50em) {
+    @include hide-screen-readers();
+  }
+}
+
+// clickable button for small screens
+.button--header-nav {
+  @include border-button();
+  padding: rem-calc(4) rem-calc(6);
+  margin-top: auto;
+  margin-right: rem-calc(10);
+  margin-left: auto;
+  margin-bottom: auto;
+  align-self: flex-end;
+  color: $header-nav-link-color;
+
+
+  &:hover, &:focus {
+    background-color: $header-nav-list-item-bg-hover;
+    color: $header-nav-anchor-color-hover;
+  }
+}
