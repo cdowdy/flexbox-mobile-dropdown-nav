@@ -1,0 +1,55 @@
+// hide the content visually, yet provide the content to screen readers.
+// Unlike positioning and negative text-indent, it works with rtl languages for localization.
+// http://a11yproject.com/posts/how-to-hide-content/
+
+/* visually hide content */
+.visually-hidden,
+%visually-hidden { /*http://developer.yahoo.com/blogs/ydn/posts/2012/10/clip-your-hidden-content-for-better-accessibility/*/
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+@mixin hide-visually() {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+// Screen readers sometimes ignore display:none1. This means the content will be read despite being “hidden”.
+// To hide content completely from screen readers use the following:
+/* hide content from the screen and screen readers */
+/* http://www.456bereastreet.com/archive/200711/screen_readers_sometimes_ignore_displaynone/ */
+.hidden,
+%hidden {
+  display: none;
+  visibility: hidden;
+}
+
+// <a class="skip-link" href="#">text</a>
+/* skip to content link */
+/* http://webaim.org/techniques/css/invisiblecontent/#skipnavlinks */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+}
