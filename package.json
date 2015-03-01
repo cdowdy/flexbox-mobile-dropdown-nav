@@ -1,0 +1,29 @@
+{
+  "name": "flexbox-mobile-dropdown-nav",
+  "version": "1.0.0",
+  "description": "Flexbox Mobile Navigation",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdowdy/flexbox-mobile-dropdown-nav.git"
+  },
+  "keywords": [
+    "Flexbox",
+    "Mobile",
+    "Dropdown",
+    "Navigation"
+  ],
+  "author": "Cory Dowdy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdowdy/flexbox-mobile-dropdown-nav/issues"
+  },
+  "homepage": "https://github.com/cdowdy/flexbox-mobile-dropdown-nav",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-sass": "^0.18.0"
+  }
+}
