@@ -1,0 +1,15 @@
+@import "utils/functions";
+@import "utils/variables";
+@import "utils/mixins";
+
+// base styles
+@import "base/reset";
+@import "base/a11y";
+@import "base/typography";
+
+// layout
+@import "layout/header";
+@import "layout/navigation";
+
+// page styles
+@import "page/demo";
