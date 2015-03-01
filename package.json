@@ -24,6 +24,11 @@
   "homepage": "https://github.com/cdowdy/flexbox-mobile-dropdown-nav",
   "dependencies": {
     "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.0.0",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-uglify": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-pleeease": "^1.3.1",
     "grunt-sass": "^0.18.0"
   }
 }
