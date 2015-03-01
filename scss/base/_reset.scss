@@ -1,0 +1,32 @@
+html,
+body {
+  height: 100%
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+div,
+ul,
+li,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $body-bg;
+  color: $body-color;
+  padding: 0;
+  margin: 0;
+  font-family: $font-family-sans-serif;
+  font-weight: $font-weight-normal;
+  font-style: $font-weight-normal;
+  line-height: $base-line-height;
+  position: relative;
+  cursor: auto;
+}
