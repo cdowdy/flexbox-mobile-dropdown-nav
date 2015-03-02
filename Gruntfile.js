@@ -11,7 +11,7 @@ module.exports = function(grunt) {
                     outputStyle: 'nested'
                 },
                 files: {
-                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.css': 'scss/navigation.scss'
+                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css': 'scss/navigation.scss'
                 }
             }
         },
@@ -37,17 +37,17 @@ module.exports = function(grunt) {
             }
         },
 
-        cssmin: {
-            options: {
-                shorthandCompacting: false,
-                roundingPrecision: -1
-            },
-            target: {
-                files: {
-                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': ['css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.css']
-                }
-            }
-        },
+        //cssmin: {
+        //    options: {
+        //        shorthandCompacting: false,
+        //        roundingPrecision: -1
+        //    },
+        //    target: {
+        //        files: {
+        //            'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.mininfied.css': ['navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css']
+        //        }
+        //    }
+        //},
 
         uglify: {
             my_target: {
@@ -62,13 +62,13 @@ module.exports = function(grunt) {
                 options: {
                     autoprefixer: {'browsers': ['last 3 versions']},
                     rem: ['16px'],
-                    minifier: false
+                    minifier: true
                 },
                 files: {
-                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.prefixed.css': 'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css'
+                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': 'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css'
                 }
             }
-        },
+        }
     });
 
     grunt.loadNpmTasks('grunt-sass');
@@ -78,6 +78,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-pleeease');
 
-    grunt.registerTask('build', ['sass', 'uglify', 'cssmin', 'pleeease']);
+    grunt.registerTask('build', ['sass', 'uglify', 'pleeease']);
     grunt.registerTask('default', ['build','browserSync','watch']);
 }
