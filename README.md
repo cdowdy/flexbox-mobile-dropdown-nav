@@ -1,8 +1,10 @@
 # flexbox-mobile-dropdown-nav
-Mobile dropdown navigation using flexbox and javascript  
+
+Mobile and Small Screen Flexbox based dropdown navigation.  
 
 Drop Down Mobile navigation up to 800 px wide device. Then its a centered navigation:
 
-Demo Here: http://cdowdy.github.io/flexbox-mobile-dropdown-nav/  
+Support to Internet Explorer 9 ( maybe 8 haven't tested )
 
-* removed the sticky footer
+* removed the sticky footer  
+* updated to support IE 9.
