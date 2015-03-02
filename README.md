@@ -14,4 +14,4 @@ Support to Internet Explorer 9 ( maybe 8 haven't tested - see image below for ie
 * JS has a11y attributes from [a11y Project](http://a11yproject.com/)
 
 # Demo
-[Flexbox Dropdown Navigation Demo](cdowdy.github.io/flexbox-mobile-dropdown-nav)
+[Flexbox Dropdown Navigation Demo](https://cdowdy.github.io/flexbox-mobile-dropdown-nav)
