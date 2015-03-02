@@ -11,7 +11,8 @@ module.exports = function(grunt) {
                     outputStyle: 'nested'
                 },
                 files: {
-                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css': 'scss/navigation.scss'
+                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css': 'scss/navigation.scss',
+                    'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.css' : 'scss/demo.scss'
                 }
             }
         },
@@ -65,7 +66,8 @@ module.exports = function(grunt) {
                     minifier: true
                 },
                 files: {
-                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': 'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css'
+                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': 'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css',
+                    'css/demo.<?= grunt.template.today("mm-dd-yyyy") %>.min.css' : 'css/demo.<?= grunt.template.today("mm-dd-yyyy") %>.css'
                 }
             }
         }

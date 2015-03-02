@@ -1,32 +1,35 @@
 /* =============[   For Demo Purposes   ]=============*/
 
-/* give the site a "sticky footer" */
-
-//.flex-site-wrapper {
-//  display: -webkit-flex;
-//  display: -ms-flexbox;
-//  display: flex;
-//  height: 100%;
-//  -webkit-flex-direction: column;
-//  -ms-flex-direction: column;
-//  flex-direction: column;
-//}
-
-.main {
-
+main,
+footer {
   width: 100%;
-  padding: 0.625em 0.938em;
-  @media screen and (min-width: 50em) {
-    padding: 0.625em 1.875em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 62.5rem;
+
+  &:before, &:after {
+    content: " ";
+    display: table;
   }
-  margin-top: 0.938em;
+  &:after {
+    clear: both;
+  }
 }
 
-// cant get sticky footer to play nice currently... I don't have time to mess with it right now :(
+footer {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.content {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  float: left;
+}
 
-//footer {
-//  flex: none;
-//  background-color: $oil;
-//  color: $header-nav-link-color;
-//  padding: 0.625em 1.875em;
-//}
+.demo-list,
+.demo-list-sub {
+  list-style: none;
+}

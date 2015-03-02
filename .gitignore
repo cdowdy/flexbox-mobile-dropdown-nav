@@ -20,3 +20,5 @@ node_modules/grunt-sass
 node_modules/grunt-pleeease
 node_modules/grunt-browser-sync
 node_modules/grunt-contrib-cssmin
+
+.htaccess

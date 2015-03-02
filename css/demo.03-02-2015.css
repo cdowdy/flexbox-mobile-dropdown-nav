@@ -1,0 +1,36 @@
+p {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  text-rendering: optimizeLegibility; }
+
+/* =============[   For Demo Purposes   ]=============*/
+main, footer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 62.5rem; }
+  main:before, main:after, footer:before, footer:after {
+    content: " ";
+    display: table; }
+  main:after, footer:after {
+    clear: both; }
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 30px; }
+
+.content {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  float: left; }
+
+.demo-list, .demo-list-sub {
+  list-style: none; }
+
+/*# sourceMappingURL=demo.03-02-2015.css.map */

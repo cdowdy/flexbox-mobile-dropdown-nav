@@ -53,15 +53,6 @@ body {
     width: auto;
     height: auto; }
 
-p {
-  font-family: inherit;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
-  text-rendering: optimizeLegibility; }
-
 /* Menu Button Container */
 .header-nav--menu-container {
   display: flex;
@@ -161,15 +152,5 @@ p {
   @media screen and (min-width: 14.875em) and (max-width: 18.688em) {
     .header-nav-name {
       font-size: 1.125rem; } }
-
-/* =============[   For Demo Purposes   ]=============*/
-/* give the site a "sticky footer" */
-.main {
-  width: 100%;
-  padding: 0.625em 0.938em;
-  margin-top: 0.938em; }
-  @media screen and (min-width: 50em) {
-    .main {
-      padding: 0.625em 1.875em; } }
 
 /*# sourceMappingURL=navigation.03-02-2015.unprefixed.css.map */
