@@ -94,6 +94,7 @@ body {
   @media screen and (min-width: 50em) {
     .navigation {
       display: flex;
+      height: 100px;
       height: 6.25rem;
       list-style: none;
       justify-content: center;
@@ -104,6 +105,16 @@ body {
   margin: 0 auto;
   list-style: none; }
 .no-flexbox .navigation--item {
+  display: table-cell;
+  width: 100px;
+  text-align: center;
+  vertical-align: middle; }
+
+.no-flexboxlegacy .navigation {
+  display: table;
+  margin: 0 auto;
+  list-style: none; }
+.no-flexboxlegacy .navigation--item {
   display: table-cell;
   width: 100px;
   text-align: center;
@@ -148,9 +159,11 @@ body {
   padding-left: 0.625rem; }
   @media screen and (max-width: 14.813em) {
     .header-nav-name {
+      font-size: 15px;
       font-size: 0.9375rem; } }
   @media screen and (min-width: 14.875em) and (max-width: 18.688em) {
     .header-nav-name {
+      font-size: 18px;
       font-size: 1.125rem; } }
 
-/*# sourceMappingURL=navigation.03-02-2015.unprefixed.css.map */
+/*# sourceMappingURL=navigation.03-03-2015.unprefixed.css.map */

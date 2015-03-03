@@ -21,8 +21,8 @@ main, footer {
     clear: both; }
 
 footer {
-  padding-top: 20px;
-  padding-bottom: 30px; }
+  padding-top: 1.25rem;
+  padding-bottom: 1.875rem; }
 
 .content {
   padding-left: 0.9375rem;
@@ -33,4 +33,4 @@ footer {
 .demo-list, .demo-list-sub {
   list-style: none; }
 
-/*# sourceMappingURL=demo.03-02-2015.css.map */
+/*# sourceMappingURL=demo.03-03-2015.css.map */

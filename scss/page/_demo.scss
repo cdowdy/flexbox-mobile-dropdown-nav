@@ -1,3 +1,4 @@
+
 /* =============[   For Demo Purposes   ]=============*/
 
 main,
@@ -19,8 +20,8 @@ footer {
 }
 
 footer {
-  padding-top: 20px;
-  padding-bottom: 30px;
+  padding-top: rem-calc(20);
+  padding-bottom: rem-calc(30);
 }
 .content {
   padding-left: 0.9375rem;
