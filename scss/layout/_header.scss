@@ -13,6 +13,10 @@
   }
 }
 
+.no-mediaqueries .header-nav--menu-container {
+  @include hide-screen-readers();
+}
+
 // clickable button for small screens
 .button--header-nav {
   @include border-button();
