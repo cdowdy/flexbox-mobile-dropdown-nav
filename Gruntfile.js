@@ -38,17 +38,18 @@ module.exports = function(grunt) {
             }
         },
 
-        //cssmin: {
-        //    options: {
-        //        shorthandCompacting: false,
-        //        roundingPrecision: -1
-        //    },
-        //    target: {
-        //        files: {
-        //            'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.mininfied.css': ['navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css']
-        //        }
-        //    }
-        //},
+        cssmin: {
+            options: {
+                shorthandCompacting: false,
+                roundingPrecision: -1
+            },
+            target: {
+                files: {
+                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.mininfied.css': ['navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css'],
+                    'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.mininfied.css' : ['css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.css']
+                }
+            }
+        },
 
         uglify: {
             my_target: {
@@ -61,13 +62,15 @@ module.exports = function(grunt) {
         pleeease: {
             custom: {
                 options: {
-                    autoprefixer: {'browsers': ['last 3 versions']},
+                    autoprefixer: {'browsers': ['last 4 versions', 'ios 6', 'Android 4.1', 'Android 4.3']},
+                    filters: {'oldIE': true},
                     rem: ['16px'],
-                    minifier: true
+                    minifier: true,
+                    mqpacker: true
                 },
                 files: {
                     'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': 'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css',
-                    'css/demo.<?= grunt.template.today("mm-dd-yyyy") %>.min.css' : 'css/demo.<?= grunt.template.today("mm-dd-yyyy") %>.css'
+                    'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.min.css' : 'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.css'
                 }
             }
         }
