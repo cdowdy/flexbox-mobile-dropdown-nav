@@ -1,6 +1,12 @@
 
 /* =============[   For Demo Purposes   ]=============*/
 
+// reset for footer and main
+footer,
+main {
+  display: block;
+}
+
 main,
 footer {
   width: 100%;
@@ -34,3 +40,19 @@ footer {
 .demo-list-sub {
   list-style: none;
 }
+
+
+.contact-list {
+  margin: 0 auto 1.0625rem auto;
+  margin-left: -1.375rem;
+  margin-right: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden; }
+.contact-list > li {
+  list-style: none;
+  float: left;
+  margin-left: 1.375rem;
+  display: block; }
+.contact-list > li > * {
+  display: block; }

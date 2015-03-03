@@ -7,9 +7,7 @@
   <!-- <link rel="stylesheet" href="css/navigation.03-01-2015.prefixed.css" /> -->
   <link rel="stylesheet" href="css/navigation.03-03-2015.min.css">
   <!-- demo css -->
- <style>
-   p{font-family:inherit;font-weight:400;font-size:16px;font-size:1rem;line-height:1.5;margin-bottom:20px;margin-bottom:1.25rem;text-rendering:optimizeLegibility}main,footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:1000px;max-width:62.5rem}main:before,main:after,footer:before,footer:after{content:" ";display:table}main:after,footer:after{clear:both}footer{padding-top:20px;padding-top:1.25rem;padding-bottom:30px;padding-bottom:1.875rem}.content{padding-left:15px;padding-left:.9375rem;padding-right:15px;padding-right:.9375rem;width:100%;float:left}.demo-list,.demo-list-sub{list-style:none}
- </style>
+  <link rel="stylesheet" href="css/demo.03-03-2015.css"/>
   <script src="js/modernizr.03032015.js"></script>
 </head>
 <body class="flex-site-wrapper">
@@ -37,7 +35,7 @@
   </ul>
 </nav><!-- /.header-navigation -->
 
-<main class="main" id="main">
+<main class="row" id="main">
   <!-- site content -->
   <div class="content">
     <h2>Flexbox Mobile Navigation With Dropdown</h2>
@@ -45,7 +43,6 @@
       Mobile/small screen navigation is a drop down. Large screens ( < 800px ) is a centered navigation. <strong>Not dependent</strong>
       on Jquery
     </p>
-    <hr/>
     <p>
       I tried to build this with accessibility first. I'm still learning the ropes of
       accessibility so if you see any issues please raise them. I would like
@@ -99,10 +96,17 @@
 </main> <!-- /main -->
 
 
-<footer>
+<footer class="row">
   <div class="content">
     <hr/>
-    <p>Cory Dowdy </p>
+    <!--<p>Cory Dowdy </p>-->
+    <!--<p><a href="https://github.com/cdowdy/flexbox-mobile-dropdown-nav">Github: </a></p>-->
+    <!--<p><a href="//corydowdy.com">Site</a></p>-->
+    <ul class="contact-list">
+      <li>Cory Dowdy</li>
+      <li><a href="https://github.com/cdowdy/flexbox-mobile-dropdown-nav">Flexbox Nav Github</a></li>
+      <li><a href="//corydowdy.com">My Site</a></li>
+    </ul>
   </div>
 
 </footer>
