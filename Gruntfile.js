@@ -62,10 +62,10 @@ module.exports = function(grunt) {
         pleeease: {
             custom: {
                 options: {
-                    autoprefixer: {'browsers': ['last 4 versions', 'ios 6', 'Android 4.1', 'Android 4.3']},
+                    autoprefixer: {'browsers': ['last 4 versions', 'ios 6', 'Android <= 4.4']},
                     filters: {'oldIE': true},
                     rem: ['16px'],
-                    minifier: true,
+                    minifier: false,
                     mqpacker: true
                 },
                 files: {
