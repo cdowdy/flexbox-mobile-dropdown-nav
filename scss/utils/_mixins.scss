@@ -13,6 +13,12 @@
     border-style: solid;
 }
 
+// clearfix to clear floats
+@mixin clearfix {
+    &:before, &:after { content: " "; display: table; }
+    &:after { clear: both; }
+}
+
 // mixin to hide from screen and screen readers... or use the placeholder class in base/_a11y.scss
 @mixin hide-screen-readers() {
     display: none;
