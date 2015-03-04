@@ -17,19 +17,19 @@
 }
 
 // no flexbox styles mainly for ie 9 support
-.no-flexbox {
-  .navigation {
-    display: table;
-    margin: 0 auto;
-    list-style: none;
-  }
-  .navigation--item {
-    display: table-cell;
-    width: 100px;
-    text-align: center;
-    vertical-align: middle;
-  }
-}
+//.no-flexbox {
+//  .navigation {
+//    display: table;
+//    margin: 0 auto;
+//    list-style: none;
+//  }
+//  .navigation--item {
+//    display: table-cell;
+//    width: 100px;
+//    text-align: center;
+//    vertical-align: middle;
+//  }
+//}
 
 //.no-flexboxlegacy {
 //  .navigation {
@@ -85,25 +85,4 @@
   }
 }
 
-/* Navigation Menu Button */
-.navigation--menuBtn {
-  color: $header-nav-link-color;
-  margin-left: auto;
-}
-
-.header-nav-name {
-  color: $header-nav-link-color;
-  align-self: flex-start;
-  margin-top: 0;
-  font-size: rem-calc(25);
-  padding-left: rem-calc(10);
-  @media screen and (max-width: 14.813em) {
-    font-size: 15px;
-    font-size: rem-calc(15);
-  }
-  @media screen and (min-width: 14.875em) and (max-width: 18.688em) {
-    font-size: 18px;
-    font-size: rem-calc(18);
-  }
-}
 
