@@ -10,6 +10,7 @@
   // from https://dev.opera.com/articles/opera-mini-and-javascript/
       isOperaMini         = (navigator.userAgent.indexOf('Opera Mini') > -1);
 
+  // js wont run properly on opera mini and opera mini has crazy big usage numbers outside of The United States
   if (isOperaMini) {
     document.documentElement.className += " operamini";
   }
