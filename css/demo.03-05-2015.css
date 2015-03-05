@@ -1,0 +1,68 @@
+/* =============[   For Demo Purposes   ]=============*/
+body {
+  background: #f8f8f8;
+  color: #222222;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+  position: relative;
+  cursor: auto; }
+
+footer, main {
+  display: block; }
+
+main, footer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 62.5rem; }
+  main:before, main:after, footer:before, footer:after {
+    content: " ";
+    display: table; }
+  main:after, footer:after {
+    clear: both; }
+
+footer {
+  padding-top: 1.25rem;
+  padding-bottom: 1.875rem; }
+
+.content {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  float: left; }
+
+.demo-list, .demo-list-sub {
+  list-style: none; }
+
+.contact-list {
+  margin: 0 auto 1.0625rem auto;
+  margin-left: -1.375rem;
+  margin-right: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden; }
+
+.contact-list > li {
+  list-style: none;
+  float: left;
+  margin-left: 1.375rem;
+  display: block; }
+
+.contact-list > li > * {
+  display: block; }
+
+p {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  text-rendering: optimizeLegibility; }
+
+/*# sourceMappingURL=demo.03-05-2015.css.map */
