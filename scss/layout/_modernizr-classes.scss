@@ -66,6 +66,12 @@
       vertical-align: middle;
     }
   }
-
 }
 
+// Man Do I hate browser sniffing...
+/* Specific Styling for Opera Mini */
+.operamini {
+  .navigation {
+    display: block;
+  }
+}

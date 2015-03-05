@@ -4,7 +4,8 @@
 
 // base styles
 @import "base/reset";
-@import "base/a11y";
+// dont import a11y yet.. classes aren't used on the page yet
+//@import "base/a11y";
 //@import "base/typography";
 
 // layout
