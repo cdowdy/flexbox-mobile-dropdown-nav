@@ -6,7 +6,13 @@
       body                = document.body,
       header              = querySelector( '.header-nav--menu-container' ),
       menuBtn             = querySelector( '.button--header-nav' ),
-      main                = querySelector( 'main' );
+      main                = querySelector( 'main'),
+  // from https://dev.opera.com/articles/opera-mini-and-javascript/
+      isOperaMini         = (navigator.userAgent.indexOf('Opera Mini') > -1);
+
+  if (isOperaMini) {
+    document.documentElement.className += " operamini";
+  }
 
     // aria attributes
   menuBtn.setAttribute( 'aria-expanded', 'false' );
