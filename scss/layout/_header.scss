@@ -1,8 +1,8 @@
-/* Menu Button Container */
-.header-nav--menu-container {
+/* flexnav header "container" */
+.fn-header {
   display: flex;
   visibility: visible;
-  background: $oil;
+  background: $header-bg-color;
   min-width: 100%;
   height: 3.125em;
   justify-content: center;
@@ -13,14 +13,15 @@
   }
 }
 
-//.no-mediaqueries .header-nav--menu-container {
-//  @include hide-screen-readers();
-//}
-
+.no-js {
+  .fn-header {
+    justify-content: flex-start;
+  }
+}
 
 // site name / title
 /* header site title */
-.header-nav-name {
+.fn-header__name {
   color: $header-nav-link-color;
   align-self: flex-start;
   margin-top: 0;
@@ -38,7 +39,7 @@
 
 
 /* Navigation Menu Button */
-.button--header-nav {
+.fn-header__button {
   @include border-button();
   padding: rem-calc(4) rem-calc(6);
   margin-top: auto;
@@ -52,6 +53,42 @@
   &:hover, &:focus {
     background-color: $header-nav-list-item-bg-hover;
     color: $header-nav-anchor-color-hover;
+  }
+}
+
+/**
+  *
+  * classes for browsers that dont support
+  * 1) Media Queries
+  * 2) Flexbox
+  * Currently using This Modernizr version
+  * http://modernizr.com/download/#-flexbox-flexboxlegacy-shiv-mq-cssclasses-teststyles-testprop-testallprops-domprefixes-css_mediaqueries
+  *
+  */
+
+/* no media query support */
+.no-mediaqueries .fn-header {
+  @include hide-screen-readers();
+}
+
+
+/* No Flexbox Support */
+.no-flexbox {
+  // for the header nav with button and site title
+  @media screen and (max-width: 49.9375em) {
+    .fn-header {
+      display: block;
+
+      .fn-header__name {
+        float: left;
+      }
+
+      .fn-header__button {
+        float: right;
+      }
+
+      @include clearfix();
+    }
   }
 }
 

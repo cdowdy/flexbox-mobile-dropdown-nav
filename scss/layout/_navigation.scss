@@ -1,10 +1,21 @@
+//
+// 1: <nav> element styles ( fn-nav-container )
+// 2: <nav><ul> styles ( fn-navigation )
+// 3: Modernizr based Styles
+//
 
-.header-navigation {
+
+// 1
+/* html5 <nav> element... holds the navigation list */
+.fn-nav-container {
   @include promote-layer();
-  background-color: $oil;
+  background-color: $header-bg-color;
 }
 
-.navigation {
+
+// 2
+/* navigation unordered list */
+.fn-navigation {
   display: none;
   @media screen and (min-width: 50em) {
     display: flex;
@@ -16,46 +27,19 @@
   }
 }
 
-// no flexbox styles mainly for ie 9 support
-//.no-flexbox {
-//  .navigation {
-//    display: table;
-//    margin: 0 auto;
-//    list-style: none;
-//  }
-//  .navigation--item {
-//    display: table-cell;
-//    width: 100px;
-//    text-align: center;
-//    vertical-align: middle;
-//  }
-//}
-
-//.no-flexboxlegacy {
-//  .navigation {
-//    display: table;
-//    margin: 0 auto;
-//    list-style: none;
-//  }
-//  .navigation--item {
-//    display: table-cell;
-//    width: 100px;
-//    text-align: center;
-//    vertical-align: middle;
-//  }
-//}
-
-.navigation.open {
+/* navigation list is open */
+.fn-navigation.open {
   display: flex;
   flex-direction: column;
-  background: $oil;
+  background: $header-bg-color;
   width: 100%;
   overflow: hidden;
   margin-left: 0;
   list-style: none;
 }
 
-.navigation--item {
+/* navigation list item */
+.fn-navigation__item {
   padding: rem-calc(15) rem-calc(20);
   //transition: background-color .3s; // I do not like the way this looks... scrapping for now.
   &:focus {
@@ -86,3 +70,105 @@
 }
 
 
+// 3
+// styles for browsers that dont support flexbox
+.no-flexbox {
+  // hide nav list on small screens that don't support flexbox
+  .fn-navigation {
+    display: none;
+  }
+
+  // make it a block level element once clicked
+  .fn-navigation.open {
+    display: block;
+  }
+  // make nav items block element instead of table cell on small screens
+  .fn-navigation__item  {
+    display: block;
+    width: 100%;
+  }
+
+  // Min width: 800px
+  @media screen and (min-width: 50em) {
+    // to center nav list make it a table for non flexbox desktop browsers
+    .fn-navigation {
+      display: table; // was display: flex-box
+      margin: 0 auto;
+      list-style: none;
+    }
+
+    // center text vertically and horizontally in table cell
+    .fn-navigation__item {
+      display: table-cell; // make table cell for centered nav
+      width: 100px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}
+
+// Man Do I hate browser sniffing...
+/* Specific Styling for Opera Mini */
+.operamini {
+  .fn-navigation {
+    display: block;
+  }
+}
+
+
+// hide checkbox trigger for browsers with js and above 800px
+@media screen and (min-width: 50em) {
+  .fn-navTrigger__no-js {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+
+/* browsers with javascript disabled or the script failed to load */
+.no-js {
+  // hide the checkbox above 799px
+  .fn-navTrigger__no-js {
+    display: none;
+    visibility: hidden;
+  }
+
+  // display the checkbox under 800px
+  @media screen and (max-width: 49.9375em) {
+    // this is for the "checkbox" css nav
+    // absolutely position the check box and clip it from the screen
+    .fn-navTrigger__no-js {
+      clip: rect(0px, 0px, 0px, 0px);
+      position: absolute;
+      top: 1.5%;
+      right: 80%;
+      left: 90%;
+    }
+
+    // if its checked display the nav
+    .fn-navTrigger__no-js:checked ~ .fn-navigation {
+      display: flex;
+      flex-direction: column;
+      background: $header-bg-color;
+      width: 100%;
+      overflow: hidden;
+      margin-left: 0;
+      list-style: none;
+    }
+
+    //
+    /* checkbox label is removed if javascript is enabled */
+    label[for="fn-noJs"] {
+      position: absolute;
+      top: 1.5%;
+      left: 70%;
+      background-color: transparent;
+      color: $header-nav-link-color;
+      width: rem-calc(75);
+      height: rem-calc(30);
+      cursor: pointer;
+      //background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='30' height='30' viewBox='0 0 30 30'><path fill='#ECF0F1' d='M0 0h30v6H0zM0 24h30v6H0zM0 12h30v6H0z'/></svg>");
+      background-image: url("../img/menu.png");
+    }
+  }
+}
