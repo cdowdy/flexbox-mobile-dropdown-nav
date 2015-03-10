@@ -143,6 +143,10 @@ div, ul, li, h1, p {
 .operamini .fn-navigation {
   display: block; }
 
+.fn-navTrigger__no-js {
+  display: none;
+  visibility: hidden; }
+
 /* browsers with javascript disabled or the script failed to load */
 .no-js .fn-navTrigger__no-js {
   display: none;
