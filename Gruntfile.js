@@ -65,8 +65,8 @@ module.exports = function(grunt) {
                     autoprefixer: {'browsers': ['last 4 versions', 'ios 6', 'Android <= 4.4']},
                     filters: {'oldIE': true},
                     rem: ['16px'],
-                    minifier: false,
-                    mqpacker: true
+                    minifier: true,
+                    mqpacker: false
                 },
                 files: {
                     'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': 'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css',
