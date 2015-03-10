@@ -1,15 +1,10 @@
-/**
- * Created by Cory on 3/9/2015.
- */
 (function () {
     'use strict';
 
     var querySelector       = document.querySelector.bind(document),
-        navContainer        = querySelector('.fn-nav-container'),
         navList             = querySelector('.fn-navigation'),
         body                = document.body,
         header              = querySelector('.fn-header'),
-        headerTitle         = document.getElementById('fn-title'),
         menuBtn             = querySelector('.fn-header__button'),
         menuButton          = document.createElement('button'),
         main                = querySelector('main'),
@@ -32,10 +27,7 @@
     menuButton.setAttribute('aria-controls', 'menu');
     menuButton.innerHTML = '<span aria-hidden="true">Menu &#x2261;</span>';
     // insert the button into the header
-    headerTitle.appendChild(menuButton);
-
-    //var headerParent = navContainer.parentNode;
-    //headerParent.insertBefore(menuButton, navContainer);
+    header.appendChild(menuButton);
 
     // remove checkbox and checkbox label since javascript is present
     if (checkbox.parentNode) {
