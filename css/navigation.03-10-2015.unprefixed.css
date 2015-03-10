@@ -76,17 +76,18 @@ div, ul, li, h1, p {
   visibility: hidden; }
 
 /* No Flexbox Support */
-.no-flexbox .fn-header {
-  display: block; }
-  .no-flexbox .fn-header .fn-header__name {
-    float: left; }
-  .no-flexbox .fn-header .fn-header__button {
-    float: right; }
-  .no-flexbox .fn-header:before, .no-flexbox .fn-header:after {
-    content: " ";
-    display: table; }
-  .no-flexbox .fn-header:after {
-    clear: both; }
+@media screen and (max-width: 49.9375em) {
+  .no-flexbox .fn-header {
+    display: block; }
+    .no-flexbox .fn-header .fn-header__name {
+      float: left; }
+    .no-flexbox .fn-header .fn-header__button {
+      float: right; }
+    .no-flexbox .fn-header:before, .no-flexbox .fn-header:after {
+      content: " ";
+      display: table; }
+    .no-flexbox .fn-header:after {
+      clear: both; } }
 
 /* html5 <nav> element... holds the navigation list */
 .fn-nav-container {
