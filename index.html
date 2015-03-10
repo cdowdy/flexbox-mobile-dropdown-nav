@@ -6,40 +6,41 @@
   <title>Flexbox Mobile Dropdown Nav</title>
 
   <!-- flexbox nav css -->
-  <link rel="stylesheet" href="css/navigation.03-05-2015.min.css">
+  <link rel="stylesheet" href="css/navigation.03-10-2015.min.css">
   <!-- demo css -->
-  <link rel="stylesheet" href="css/demo.03-05-2015.min.css"/>
+  <link rel="stylesheet" href="css/demo.03-10-2015.min.css"/>
 
   <!-- flexbox nav custom modernizr -->
   <script src="js/modernizr.03032015.js"></script>
 </head>
 <body>
 
-<header class="header-nav--menu-container" id="js_header">
-  <h1 class="header-nav-name">Flexbox Nav</h1>
-  <button class="button--header-nav" id="js_menuBtn">Menu &#x2261;</button>
+<header class="fn-header" id="js-header">
+  <h1 class="fn-header__name">Flexbox Nav</h1>
 </header>
-<!-- /.header-nav--menu-container -->
+<!-- /.fn-header -->
 
-<nav class="header-navigation" role="navigation">
-  <ul class="navigation" id="js_nav">
-    <li class="navigation--item">
+<nav class="fn-nav-container" role="navigation">
+  <input type="checkbox" id="fn-noJs" class="fn-navTrigger__no-js" />
+  <label id="fn-noJs_label" for="fn-noJs"></label>
+  <ul class="fn-navigation"  id="js-nav">
+    <li class="fn-navigation__item">
       <a href="#one">Home</a>
     </li>
-    <li class="navigation--item">
+    <li class="fn-navigation__item">
       <a href="#two">About</a>
     </li>
-    <li class="navigation--item">
+    <li class="fn-navigation__item">
       <a href="#three">Blog</a>
     </li>
-    <li class="navigation--item">
+    <li class="fn-navigation__item">
       <a href="#four">Archives</a>
     </li>
-    <li class="navigation--item">
+    <li class="fn-navigation__item">
       <a href="#five">Photography</a>
     </li>
   </ul>
-</nav><!-- /.header-navigation -->
+</nav><!-- /.fn-nav-container -->
 
 <main class="row" id="main">
   <!-- site content -->
@@ -114,8 +115,8 @@
 
 </footer>
 
-<script src="js/navigation.min.js" async defer></script>
+<script src="js/navigation.js" async defer></script>
 <!-- test classlist polyfilll for android 2.3 -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js" async></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js" async></script>-->
 </body>
 </html>
