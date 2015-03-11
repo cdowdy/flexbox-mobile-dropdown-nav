@@ -9,8 +9,7 @@
 
 @mixin border-button() {
     background: none;
-    border-width: rem-calc(2);
-    border-style: solid;
+    border: rem-calc(2) solid;
 }
 
 // clearfix to clear floats

@@ -62,10 +62,7 @@
 .fn-header__button {
   @include border-button();
   padding: rem-calc(4) rem-calc(6);
-  margin-top: auto;
-  margin-right: rem-calc(10);
-  margin-left: auto;
-  margin-bottom: auto;
+  margin: auto rem-calc(10) auto auto;
   align-self: flex-end;
   color: $header-nav-link-color;
 
@@ -265,13 +262,12 @@
       position: absolute;
       top: 1.5%;
       left: 70%;
-      background-color: transparent;
       color: $header-nav-link-color;
       width: rem-calc(75);
       height: rem-calc(30);
       cursor: pointer;
       //background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='30' height='30' viewBox='0 0 30 30'><path fill='#ECF0F1' d='M0 0h30v6H0zM0 24h30v6H0zM0 12h30v6H0z'/></svg>");
-      background-image: url("../img/menu.png");
+      background: transparent url("../img/menu.png");
     }
   }
 }
