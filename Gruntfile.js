@@ -40,12 +40,13 @@ module.exports = function(grunt) {
 
         cssmin: {
             options: {
-                shorthandCompacting: false,
-                roundingPrecision: -1
+                shorthandCompacting: true,
+                roundingPrecision: -1,
+                report: 'gzip'
             },
             target: {
                 files: {
-                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.mininfied.css': ['navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css'],
+                    'css/dist/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': ['css/dist/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css'],
                     'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.mininfied.css' : ['css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.css']
                 }
             }
@@ -54,7 +55,8 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'js/navigation.min.js': ['js/navigation.js']
+                    'js/navigation.min.js': ['js/navigation.js'],
+                    'js/navigation.android-2.3.min.js' : ['js/classList.poly.js', 'js/navigation.js']
                 }
             }
         },
@@ -62,14 +64,16 @@ module.exports = function(grunt) {
         pleeease: {
             custom: {
                 options: {
-                    autoprefixer: {'browsers': ['last 4 versions', 'ios 6', 'Android <= 4.4']},
+                    autoprefixer: {'browsers': ['last 4 versions', 'ios 5', 'Android <= 4.4']},
                     filters: {'oldIE': true},
-                    rem: ['16px'],
+                    rem: ['16px', {'replace': false, 'atrules': true}],
                     minifier: true,
-                    mqpacker: false
+                    mqpacker: false,
+                    pseudoElements: true,
+                    opacity: true
                 },
                 files: {
-                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': 'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css',
+                    'css/dist/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': 'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css',
                     'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.min.css' : 'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.css'
                 }
             }
@@ -83,6 +87,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-pleeease');
 
-    grunt.registerTask('build', ['sass', 'uglify', 'pleeease']);
+    grunt.registerTask('build', ['sass', 'uglify', 'pleeease', 'cssmin']);
     grunt.registerTask('default', ['build','browserSync','watch']);
 }
