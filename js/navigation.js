@@ -44,18 +44,18 @@
 
 
     function closeMenu() {
-        body.classList.remove( 'open' );
-        header.classList.remove( 'open' );
-        navList.classList.remove( 'open' );
+        body.classList.remove( 'is-open' );
+        header.classList.remove( 'is-open' );
+        navList.classList.remove( 'is-open' );
         menuButton.innerHTML = '<span aria-hidden="true">Menu &#x2261;</span>';
     }
 
     function openMenu() {
-        body.classList.toggle( 'open' );
-        header.classList.toggle( 'open' );
-        navList.classList.toggle( 'open' );
+        body.classList.toggle( 'is-open' );
+        header.classList.toggle( 'is-open' );
+        navList.classList.toggle( 'is-open' );
         navList.classList.add( 'opened' );
-        if ( navList.classList.contains( 'open' )) {
+        if ( navList.classList.contains( 'is-open' )) {
             menuButton.setAttribute( 'aria-expanded', 'true' );
             navList.setAttribute( 'aria-hidden', 'false' );
             menuButton.innerHTML = '<span aria-hidden="true">Close &#x2261;</span>';
