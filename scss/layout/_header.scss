@@ -42,10 +42,7 @@
 .fn-header__button {
   @include border-button();
   padding: rem-calc(4) rem-calc(6);
-  margin-top: auto;
-  margin-right: rem-calc(10);
-  margin-left: auto;
-  margin-bottom: auto;
+  margin: auto rem-calc(10) auto auto;
   align-self: flex-end;
   color: $header-nav-link-color;
 
