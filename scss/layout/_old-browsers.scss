@@ -27,18 +27,6 @@
   }
 }
 
-.no-flexbox .fn-navigation.is-open {
-  @media screen and (max-width: 49.9375em) {
-    display: block;
-    visibility: visible;
-  }
-}
-
-.no-flexbox .fn-header__button {
-  @media screen and (max-width: 49.9375em) {
-   float: right;
-  }
-}
 .no-flexbox .fn-navigation__item {
   @media screen and (min-width: 50em) {
     display: inline;
@@ -95,4 +83,12 @@
 .no-mediaqueries .fn-navigation__item {
   display: inline;
   padding: rem-calc(15) rem-calc(20);
+}
+
+
+// opera mini
+.operamini .fn-header__button {
+  @media screen and (max-width: 49.9375em) {
+    float: right;
+  }
 }
