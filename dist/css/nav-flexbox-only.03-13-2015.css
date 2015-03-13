@@ -151,72 +151,6 @@ footer, main {
     color: #1c2833;
     outline: 1px solid #81cfe0; }
 
-/**
-  *
-  * classes for browsers that dont support
-  * 1) Media Queries
-  * 2) Flexbox
-  * Currently using This Modernizr version
-  * http://modernizr.com/download/#-flexbox-flexboxlegacy-shiv-mq-cssclasses-teststyles-testprop-testallprops-domprefixes-css_mediaqueries
-  *
-  */
-@media screen and (min-width: 50em) {
-  .no-flexbox .fn-navigation {
-    display: block;
-    visibility: visible;
-    text-align: center;
-    margin-top: 0.9375rem; } }
-
-@media screen and (min-width: 50em) {
-  .no-flexbox .fn-navigation__item {
-    display: inline; } }
-
-.no-mediaqueries .fn-header {
-  display: block;
-  visibility: visible;
-  height: 6.25em;
-  padding: 0.9375rem 0; }
-  .no-mediaqueries .fn-header:before, .no-mediaqueries .fn-header:after {
-    content: " ";
-    display: table; }
-  .no-mediaqueries .fn-header:after {
-    clear: both; }
-
-/* remove the site title and menu button */
-.no-mediaqueries .fn-header__title-container {
-  display: none;
-  visibility: hidden; }
-
-/* dont display checkbox unless js isn't available */
-.no-mediaqueries .fn-navTrigger__no-js {
-  display: none;
-  visibility: hidden; }
-
-.no-mediaqueries .fn-nav-container {
-  display: block;
-  visibility: visible;
-  max-width: 100%;
-  max-height: 100%; }
-
-.no-mediaqueries .fn-navigation {
-  display: block;
-  visibility: visible;
-  text-align: center;
-  margin-top: 2%; }
-
-.no-mediaqueries .fn-navigation__item {
-  display: inline;
-  padding: 0.9375rem 1.25rem; }
-
-@media screen and (max-width: 49.9375em) {
-  .operamini .fn-header__button {
-    float: right; } }
-
-@media screen and (max-width: 49.9375em) {
-  .operamini .fn-navigation.is-open {
-    display: block;
-    visibility: visible; } }
-
 @media screen and (min-width: 50em) {
   .fn-navTrigger__no-js {
     display: none;
@@ -247,4 +181,4 @@ footer, main {
     cursor: pointer;
     background: transparent url("../img/menu.png") center no-repeat; } }
 
-/*# sourceMappingURL=navigation.03-13-2015.unprefixed.css.map */
+/*# sourceMappingURL=nav-flexbox-only.03-13-2015.css.map */
