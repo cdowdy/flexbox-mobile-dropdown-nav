@@ -5,12 +5,14 @@ body {
   margin: 0;
 }
 
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
 
+/* below here is used in the demo page only */
 div,
 ul,
 li,
@@ -19,5 +21,12 @@ p {
   margin: 0;
   padding: 0;
 }
+
+// reset for footer and main
+footer,
+main {
+  display: block;
+}
+
 
 
