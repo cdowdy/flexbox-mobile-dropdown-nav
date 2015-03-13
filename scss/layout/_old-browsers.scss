@@ -1,0 +1,86 @@
+/**
+  *
+  * classes for browsers that dont support
+  * 1) Media Queries
+  * 2) Flexbox
+  * Currently using This Modernizr version
+  * http://modernizr.com/download/#-flexbox-flexboxlegacy-shiv-mq-cssclasses-teststyles-testprop-testallprops-domprefixes-css_mediaqueries
+  *
+  */
+// =====================================================================================================================
+//    _   _         ______ _           _
+//   | \ | |       |  ____| |         | |
+//   |  \| | ___   | |__  | | _____  _| |__   _____  __
+//   | . ` |/ _ \  |  __| | |/ _ \ \/ / '_ \ / _ \ \/ /
+//   | |\  | (_) | | |    | |  __/>  <| |_) | (_) >  <
+//   |_| \_|\___/  |_|    |_|\___/_/\_\_.__/ \___/_/\_\
+//
+//
+// =====================================================================================================================
+
+.no-flexbox .fn-navigation {
+  @media screen and (min-width: 50em) {
+    display: block;
+    visibility: visible;
+    text-align: center;
+    margin-top: rem-calc(15);
+  }
+}
+
+.no-flexbox .fn-navigation__item {
+  @media screen and (min-width: 50em) {
+    display: inline;
+  }
+}
+
+// =====================================================================================================================
+//    _   _         __  __          _ _          ____                  _
+//   | \ | |       |  \/  |        | (_)        / __ \                (_)
+//   |  \| | ___   | \  / | ___  __| |_  __ _  | |  | |_   _  ___ _ __ _  ___  ___
+//   | . ` |/ _ \  | |\/| |/ _ \/ _` | |/ _` | | |  | | | | |/ _ \ '__| |/ _ \/ __|
+//   | |\  | (_) | | |  | |  __/ (_| | | (_| | | |__| | |_| |  __/ |  | |  __/\__ \
+//   |_| \_|\___/  |_|  |_|\___|\__,_|_|\__,_|  \___\_\\__,_|\___|_|  |_|\___||___/
+//
+//
+// =====================================================================================================================
+
+
+.no-mediaqueries .fn-header {
+  display: block;
+  visibility: visible;
+  @include clearfix();
+  height: $big-header-height; // 100px
+  padding: $big-header-padding; // 15px 0
+}
+/* remove the site title and menu button */
+.no-mediaqueries .fn-header__title-container {
+  @include hide-screen-readers();
+}
+
+/* dont display checkbox unless js isn't available */
+.no-mediaqueries .fn-navTrigger__no-js {
+  display: none;
+  visibility: hidden;
+}
+
+
+.no-mediaqueries .fn-nav-container {
+  display: block;
+  visibility: visible;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.no-mediaqueries .fn-navigation {
+  display: block;
+  visibility: visible;
+  text-align: center;
+  margin-top: 2%;
+}
+
+
+.no-mediaqueries .fn-navigation__item {
+  display: inline;
+  padding: rem-calc(15) rem-calc(20);
+}
