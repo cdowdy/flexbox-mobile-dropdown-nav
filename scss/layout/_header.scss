@@ -1,32 +1,46 @@
+// =====================================================================================================================
+//    _    _                _              _____ _         _
+//   | |  | |              | |            / ____| |       | |
+//   | |__| | ___  __ _  __| | ___ _ __  | (___ | |_ _   _| | ___  ___
+//   |  __  |/ _ \/ _` |/ _` |/ _ \ '__|  \___ \| __| | | | |/ _ \/ __|
+//   | |  | |  __/ (_| | (_| |  __/ |     ____) | |_| |_| | |  __/\__ \
+//   |_|  |_|\___|\__,_|\__,_|\___|_|    |_____/ \__|\__, |_|\___||___/
+//                                                    __/ |
+//                                                   |___/
+// =====================================================================================================================
+
 /* flexnav header "container" */
 .fn-header {
-  display: flex;
+  display: block;
   visibility: visible;
   background: $header-bg-color;
   min-width: 100%;
-  height: 3.125em;
-  justify-content: center;
+  padding: $header-padding;
   @include promote-layer();
-  padding: rem-calc(7) rem-calc(5);
+  @include clearfix();
+  @media screen and (min-width: 50em) {
+    height: $big-header-height; // 100px
+    padding: $big-header-padding; // 15px 0
+  }
+}
+
+.fn-header__title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 rem-calc(15);
+  height: 100%;
+  // @800px hide the title container ( name and menu button )
   @media screen and (min-width: 50em) {
     @include hide-screen-readers();
   }
 }
 
-.no-js {
-  .fn-header {
-    justify-content: flex-start;
-  }
-}
-
-// site name / title
 /* header site title */
 .fn-header__name {
   color: $header-nav-link-color;
-  align-self: flex-start;
-  margin-top: 0;
+  margin-right: auto;
   font-size: rem-calc(25);
-  padding-left: rem-calc(10);
   @media screen and (max-width: 14.813em) {
     font-size: 15px;
     font-size: rem-calc(15);
@@ -35,59 +49,23 @@
     font-size: 18px;
     font-size: rem-calc(18);
   }
+  // @150px remove the name and keep the menu .fn-header__button on the screen
+  @media screen and (max-width: 9.375em) {
+    @include hide-screen-readers();
+  }
 }
 
-
-/* Navigation Menu Button */
 .fn-header__button {
   @include border-button();
-  padding: rem-calc(4) rem-calc(6);
-  margin: auto rem-calc(10) auto auto;
-  align-self: flex-end;
   color: $header-nav-link-color;
-
-
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: $header-nav-list-item-bg-hover;
     color: $header-nav-anchor-color-hover;
+    border: rem-calc(2) solid $header-nav-link-color;
+  }
+  // @ 150px center the button in the header
+  @media screen and (max-width: 9.375em) {
+    margin: auto;
   }
 }
-
-/**
-  *
-  * classes for browsers that dont support
-  * 1) Media Queries
-  * 2) Flexbox
-  * Currently using This Modernizr version
-  * http://modernizr.com/download/#-flexbox-flexboxlegacy-shiv-mq-cssclasses-teststyles-testprop-testallprops-domprefixes-css_mediaqueries
-  *
-  */
-
-/* no media query support */
-.no-mediaqueries .fn-header {
-  @include hide-screen-readers();
-}
-
-
-/* No Flexbox Support */
-.no-flexbox {
-  // for the header nav with button and site title
-  @media screen and (max-width: 49.9375em) {
-    .fn-header {
-      display: block;
-
-      .fn-header__name {
-        float: left;
-      }
-
-      .fn-header__button {
-        float: right;
-      }
-
-      @include clearfix();
-    }
-  }
-}
-
-
-
