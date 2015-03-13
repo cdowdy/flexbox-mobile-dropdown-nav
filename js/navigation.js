@@ -14,6 +14,7 @@
         isOperaMini         = (navigator.userAgent.indexOf('Opera Mini') > -1);
 
     // js wont run properly on opera mini and opera mini has crazy big usage numbers outside of The United States
+    // actually **fixed** this with a polyfill and some css.. i'll leave just in case though.
     if (isOperaMini) {
         document.documentElement.className += " operamini";
     }
