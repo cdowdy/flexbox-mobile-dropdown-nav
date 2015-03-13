@@ -1,3 +1,19 @@
+/** ================================================================================================================= *\
+  *                                                                                                                   *\
+  *           Flexbox navigation styles
+  *
+  *   1.  Header styles is strictly for the <header> element and items with .fn-header class
+  *   2.  Navigation styles is strictly for the <nav> and <ul> items with .fn-nav class
+  *
+  *   Cory Dowdy March 10th, 2015
+  *                                                                                                                   *\
+ \* ================================================================================================================= */
+
+/* removes delay in dropdown on windows phone 8.1*/
+/* also know as the 300ms delay for touch devices */
+html {
+ touch-action: manipulation;
+}
 @import "utils/functions";
 @import "utils/variables";
 @import "utils/mixins";
@@ -9,9 +25,8 @@
 //@import "base/typography";
 
 // layout
-//@import "layout/header";
+@import "layout/header";
 @import "layout/navigation";
-//@import "layout/modernizr-classes";
+@import "layout/old-browsers";
+@import "layout/no-js";
 
-// page styles
-//@import "page/demo";
