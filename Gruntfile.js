@@ -12,6 +12,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css': 'scss/navigation.scss',
+                    'dist/css/nav-flexbox-only.<%= grunt.template.today("mm-dd-yyyy") %>.css' : 'scss/flex-only.scss',
                     'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.css' : 'scss/demo.scss'
                 }
             }
@@ -44,10 +45,16 @@ module.exports = function(grunt) {
                 roundingPrecision: -1,
                 report: 'gzip'
             },
-            target: {
+            dev: {
                 files: {
-                    'css/dist/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': ['css/dist/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css'],
+                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': ['css/dist/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css'],
                     'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.mininfied.css' : ['css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.css']
+                }
+            },
+            dist: {
+                files: {
+                    //'dist/css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': ['css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css'],
+                    'dist/css/nav-flexbox-only.<%= grunt.template.today("mm-dd-yyyy") %>.min.css' : ['dist/css/nav-flexbox-only.<%= grunt.template.today("mm-dd-yyyy") %>.css']
                 }
             }
         },
@@ -57,6 +64,12 @@ module.exports = function(grunt) {
                 files: {
                     'js/navigation.min.js': ['js/navigation.js'],
                     'js/navigation.android-2.3.min.js' : ['js/classList.poly.js', 'js/navigation.js']
+                }
+            },
+            dist: {
+                files: {
+                    'dist/js/navigation.min.js': ['js/navigation.js'],
+                    'dist/js/navigation.android-ie8.min.js' : ['js/classList.poly.js', 'js/navigation.js']
                 }
             }
         },
@@ -68,16 +81,33 @@ module.exports = function(grunt) {
                     filters: {'oldIE': true},
                     rem: ['16px', {'replace': false, 'atrules': true}],
                     minifier: true,
-                    mqpacker: false,
+                    mqpacker: true,
                     pseudoElements: true,
                     opacity: true
                 },
                 files: {
-                    'css/dist/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': 'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css',
+                    'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': 'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css',
                     'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.min.css' : 'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.css'
                 }
+            },
+            dist: {
+                options: {
+                    autoprefixer: {'browsers': ['last 4 versions', 'ios 5', 'Android <= 4.4']},
+                    filters: {'oldIE': true},
+                    rem: ['16px', {'replace': false, 'atrules': true}],
+                    minifier: true,
+                    mqpacker: true,
+                    pseudoElements: true,
+                    opacity: true
+                },
+                files: {
+                    'dist/css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': 'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css'
+                }
             }
+
         }
+
+
     });
 
     grunt.loadNpmTasks('grunt-sass');
@@ -87,6 +117,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-pleeease');
 
-    grunt.registerTask('build', ['sass', 'uglify', 'pleeease', 'cssmin']);
+    grunt.registerTask('build', ['sass', 'uglify:dist', 'pleeease:dist', 'cssmin:dist']);
+    grunt.registerTask('dev', ['sass', 'browserSync', 'watch']);
     grunt.registerTask('default', ['build','browserSync','watch']);
-}
+};

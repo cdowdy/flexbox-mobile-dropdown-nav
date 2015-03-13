@@ -167,6 +167,15 @@ footer, main {
     text-align: center;
     margin-top: 0.9375rem; } }
 
+@media screen and (max-width: 49.9375em) {
+  .no-flexbox .fn-navigation.is-open {
+    display: block;
+    visibility: visible; } }
+
+@media screen and (max-width: 49.9375em) {
+  .no-flexbox .fn-header__button {
+    float: right; } }
+
 @media screen and (min-width: 50em) {
   .no-flexbox .fn-navigation__item {
     display: inline; } }
