@@ -6,9 +6,9 @@
   <title>Flexbox Mobile Dropdown Nav</title>
 
   <!-- flexbox nav css -->
-  <link rel="stylesheet" href="dist/navigation.03-11-2015.min.css">
+  <link rel="stylesheet" href="dist/css/navigation.03-13-2015.min.css">
   <!-- demo css -->
-  <link rel="stylesheet" href="css/demo.03-10-2015.min.css"/>
+  <link rel="stylesheet" href="css/demo.03-13-2015.min.css"/>
 
   <!-- flexbox nav custom modernizr -->
   <script src="js/modernizr.03032015.js"></script>
@@ -16,31 +16,32 @@
 <body>
 
 <header class="fn-header" id="js-header">
-  <h1 class="fn-header__name">Flexbox Nav</h1>
-</header>
-<!-- /.fn-header -->
-
-<nav class="fn-nav-container" role="navigation">
+  <div class="fn-header__title-container">
+    <h1 class="fn-header__name">Flexbox Nav</h1>
+  </div>
   <input type="checkbox" id="fn-noJs" class="fn-navTrigger__no-js" />
   <label id="fn-noJs_label" for="fn-noJs"></label>
-  <ul class="fn-navigation"  id="js-nav">
-    <li class="fn-navigation__item">
-      <a href="#one">Home</a>
-    </li>
-    <li class="fn-navigation__item">
-      <a href="#two">About</a>
-    </li>
-    <li class="fn-navigation__item">
-      <a href="#three">Blog</a>
-    </li>
-    <li class="fn-navigation__item">
-      <a href="#four">Archives</a>
-    </li>
-    <li class="fn-navigation__item">
-      <a href="#five">Photography</a>
-    </li>
-  </ul>
-</nav><!-- /.fn-nav-container -->
+  <nav class="fn-nav-container" role="navigation">
+    <ul class="fn-navigation"  id="js-nav">
+      <li class="fn-navigation__item">
+        <a href="#one">Home</a>
+      </li>
+      <li class="fn-navigation__item">
+        <a href="#two">About</a>
+      </li>
+      <li class="fn-navigation__item">
+        <a href="#three">Blog</a>
+      </li>
+      <li class="fn-navigation__item">
+        <a href="#four">Archives</a>
+      </li>
+      <li class="fn-navigation__item">
+        <a href="#five">Photography</a>
+      </li>
+    </ul>
+  </nav><!-- /.fn-nav-container -->
+</header>
+<!-- /.fn-header -->
 
 <main class="row" id="main">
   <!-- site content -->
@@ -63,21 +64,21 @@
     </p>
     <ol>
       <li>
-        4.1KB Minified
+        4.7KB Minified
       </li>
       <li>
-        1.7KB gzipped
+        1.8KB gzipped
       </li>
     </ol>
     <p>
-      File Size: JS
+      File Size: JS (with polyfill for support in old browsers)
     </p>
     <ol>
       <li>
-        3.1KB Minified
+        3.3KB Minified
       </li>
       <li>
-        1.5KB gzipped
+        1.9KB gzipped
       </li>
     </ol>
 
@@ -114,7 +115,6 @@
   </div>
 
 </footer>
-<!-- this is the js needed to run in android 2.3, ie 8/9 and opera mini --> 
-<script src="js/navigation.android-2.3.min.js" async defer></script>
+<script src="dist/js/navigation.android-ie8.min.js" async defer></script>
 </body>
 </html>
