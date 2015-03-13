@@ -1,0 +1,54 @@
+// =====================================================================================================================
+//    _   _              _        _____ _               _    _
+//   | \ | |            | |      / ____| |             | |  | |
+//   |  \| | ___        | |___  | |    | |__   ___  ___| | _| |__   _____  __
+//   | . ` |/ _ \   _   | / __| | |    | '_ \ / _ \/ __| |/ / '_ \ / _ \ \/ /
+//   | |\  | (_) | | |__| \__ \ | |____| | | |  __/ (__|   <| |_) | (_) >  <
+//   |_| \_|\___/   \____/|___/  \_____|_| |_|\___|\___|_|\_\_.__/ \___/_/\_\
+//
+//
+// =====================================================================================================================
+
+
+// hide checkbox trigger for browsers with js and above 800px
+@media screen and (min-width: 50em) {
+  .fn-navTrigger__no-js {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+// display the checkbox under 800px
+@media screen and (max-width: 49.9375em) {
+  // clip (hide) the checkbox under 800px
+  .no-js .fn-navTrigger__no-js {
+    clip: rect(0px, 0px, 0px, 0px);
+    position: absolute;
+    top: 1.5%;
+    right: 80%;
+    left: 90%;
+  }
+
+  .no-js .fn-navTrigger__no-js:checked ~ .fn-nav-container {
+    display: block;
+    background: $header-bg-color;
+    height: auto;
+    max-height: 800px;
+
+    .fn-navigation {
+      display: inline;
+      visibility: visible;
+    }
+  }
+
+  .no-js label[for="fn-noJs"] {
+    position: absolute;
+    top: 1.5%;
+    left: 75%;
+    color: $header-nav-link-color;
+    width: rem-calc(75);
+    height: rem-calc(30);
+    cursor: pointer;
+    background: transparent url("../img/menu.png") center no-repeat;
+  }
+}
