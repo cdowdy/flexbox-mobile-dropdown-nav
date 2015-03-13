@@ -40,4 +40,9 @@ $h1-font-size           : rem-calc(40);
 //
 //
 // =====================================================================================================================
-$header-height  : 3.125em;
+$header-height      : 3.125em; // 50px
+// above 800px
+$big-header-height  : 6.25em; // 100px
+$header-padding     : rem-calc(5) 0;
+// padding 800px and up
+$big-header-padding : rem-calc(15) 0;
