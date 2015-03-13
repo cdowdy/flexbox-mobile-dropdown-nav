@@ -14,20 +14,12 @@ body {
   cursor: auto;
 }
 
-// reset for footer and main
-footer,
-main {
-  display: block;
-}
 
 main,
 footer {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 62.5rem;
+  margin: 0 auto;
+  max-width: 68.75rem;
 
   &:before, &:after {
     content: " ";
@@ -36,6 +28,10 @@ footer {
   &:after {
     clear: both;
   }
+}
+
+main {
+  padding-top: rem-calc(20);
 }
 
 footer {
@@ -54,18 +50,14 @@ footer {
   list-style: none;
 }
 
-
 .contact-list {
-  margin: 0 auto 1.0625rem auto;
-  margin-left: -1.375rem;
-  margin-right: 0;
+  margin: 0 0 rem-calc(17) rem-calc(-22);
   padding: 0;
   list-style: none;
-  overflow: hidden; }
-.contact-list > li {
-  list-style: none;
-  float: left;
-  margin-left: 1.375rem;
-  display: block; }
-.contact-list > li > * {
-  display: block; }
+  overflow: hidden;
+
+  > li {
+    float: left;
+    margin-left: rem-calc(22);
+  }
+}
