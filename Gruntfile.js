@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.unprefixed.css': 'scss/navigation.scss',
-                    'dist/css/nav-flexbox-only.<%= grunt.template.today("mm-dd-yyyy") %>.css' : 'scss/flex-only.scss',
+                    'dist/css/flexbox-only/nav-flexbox-only.<%= grunt.template.today("mm-dd-yyyy") %>.css' : 'scss/flex-only.scss',
                     'css/demo.<%= grunt.template.today("mm-dd-yyyy") %>.css' : 'scss/demo.scss'
                 }
             }
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     //'dist/css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css': ['css/navigation.<%= grunt.template.today("mm-dd-yyyy") %>.min.css'],
-                    'dist/css/nav-flexbox-only.<%= grunt.template.today("mm-dd-yyyy") %>.min.css' : ['dist/css/nav-flexbox-only.<%= grunt.template.today("mm-dd-yyyy") %>.css']
+                    'dist/css/flexbox-only/nav-flexbox-only.<%= grunt.template.today("mm-dd-yyyy") %>.min.css' : ['dist/css/flexbox-only/nav-flexbox-only.<%= grunt.template.today("mm-dd-yyyy") %>.css']
                 }
             }
         },

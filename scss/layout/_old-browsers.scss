@@ -95,16 +95,17 @@
 //          | |
 //
 // =====================================================================================================================
-
-.operamini .fn-header__button {
-  @media screen and (max-width: 49.9375em) {
-    float: right;
-  }
-}
-
-.operamini .fn-navigation.is-open {
-  @media screen and (max-width: 49.9375em) {
-    display: block;
-    visibility: visible;
-  }
-}
+// no longer needed --> https://dev.opera.com/blog/opera-mini-server-upgrade/
+//
+//.operamini .fn-header__button {
+//  @media screen and (max-width: 49.9375em) {
+//    float: right;
+//  }
+//}
+//
+//.operamini .fn-navigation.is-open {
+//  @media screen and (max-width: 49.9375em) {
+//    display: block;
+//    visibility: visible;
+//  }
+//}
