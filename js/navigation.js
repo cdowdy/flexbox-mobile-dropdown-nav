@@ -9,15 +9,7 @@
         menuButton          = document.createElement('button'),
         main                = querySelector('main'),
         checkbox            = document.getElementById("fn-noJs"),
-        cbLabel             = document.getElementById("fn-noJs_label"),
-    // from https://dev.opera.com/articles/opera-mini-and-javascript/
-        isOperaMini         = (navigator.userAgent.indexOf('Opera Mini') > -1);
-
-    // js wont run properly on opera mini and opera mini has crazy big usage numbers outside of The United States
-    // actually **fixed** this with a polyfill and some css.. i'll leave just in case though.
-    if (isOperaMini) {
-        document.documentElement.className += " operamini";
-    }
+        cbLabel             = document.getElementById("fn-noJs_label");
 
     // since js is running remove the checkbox and label from the dom
     // and insert a button
