@@ -7,7 +7,7 @@ These CSS files only contain support for modern browsers that recognize:
 * media queries  
   * ```@media screen and (min-width: 50em)```  
 
-There **is no fallback** for browsers < IE 11 , Android < 4.4 or Opera Mini.  
+There **is no fallback** for browsers < IE 11 , Android < 4.4.  
 
 Example:  
 ```css  
