@@ -57,4 +57,4 @@ has a fallback using modernizr as follows:
     margin-top: 0.9375rem; }
 }  
 ```  
-You can use this file since it has ```.no-flexbox``` and ```.no-mediaqueries``` but **rem units are still used you will have some layout issues in IE8 and Opera Mini**.
+You can use this file since it has ```.no-flexbox``` and ```.no-mediaqueries``` but **rem units are still used you will have some layout issues in IE8**.
