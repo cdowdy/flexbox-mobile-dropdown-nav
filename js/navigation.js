@@ -1,15 +1,20 @@
+/**
+ * Created by Cory on 3/11/2015.
+ */
 (function () {
     'use strict';
 
     var querySelector       = document.querySelector.bind(document),
-        navList             = querySelector('.fn-navigation'),
-        body                = document.body,
-        header              = querySelector('.fn-header'),
-        menuBtn             = querySelector('.fn-header__button'),
-        menuButton          = document.createElement('button'),
-        main                = querySelector('main'),
-        checkbox            = document.getElementById("fn-noJs"),
-        cbLabel             = document.getElementById("fn-noJs_label");
+      navContainer        = querySelector('.fn-nav-container'),
+      navList             = querySelector('.fn-navigation'),
+      body                = document.body,
+      header              = querySelector('.fn-header'),
+      headerTitle         = querySelector('.fn-header__name'),
+      buttonInsert        = headerTitle.parentNode,
+      menuButton          = document.createElement('button'),
+      main                = querySelector('main'),
+      checkbox            = document.getElementById("fn-noJs"),
+      cbLabel             = document.getElementById("fn-noJs_label");
 
     // since js is running remove the checkbox and label from the dom
     // and insert a button
@@ -19,8 +24,8 @@
     menuButton.setAttribute('aria-expanded', 'false');
     menuButton.setAttribute('aria-controls', 'menu');
     menuButton.innerHTML = '<span aria-hidden="true">Menu &#x2261;</span>';
-    // insert the button into the header
-    header.appendChild(menuButton);
+    // insert the button into the header AFTER the h1 title
+    buttonInsert.insertBefore(menuButton, headerTitle.nextSibling);
 
     // remove checkbox and checkbox label since javascript is present
     if (checkbox.parentNode) {
@@ -32,7 +37,7 @@
     // I don't know about this...seems pretty crude
     if (window.screen.width < 800) {
         navList.setAttribute( 'aria-hidden', 'true' );
-        navList.setAttribute( 'aria-labelledby', 'button--header-nav' );
+        navList.setAttribute( 'aria-labelledby', 'fn-header__button' );
     }
 
 
@@ -40,6 +45,7 @@
         body.classList.remove( 'is-open' );
         header.classList.remove( 'is-open' );
         navList.classList.remove( 'is-open' );
+        navContainer.classList.remove('is-open');
         menuButton.innerHTML = '<span aria-hidden="true">Menu &#x2261;</span>';
     }
 
@@ -47,6 +53,7 @@
         body.classList.toggle( 'is-open' );
         header.classList.toggle( 'is-open' );
         navList.classList.toggle( 'is-open' );
+        navContainer.classList.toggle( 'is-open' );
         navList.classList.add( 'opened' );
         if ( navList.classList.contains( 'is-open' )) {
             menuButton.setAttribute( 'aria-expanded', 'true' );
@@ -59,6 +66,7 @@
         }
 
     }
+
 
     main.addEventListener( 'click', closeMenu );
     menuButton.addEventListener( 'click', openMenu );
