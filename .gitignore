@@ -22,3 +22,7 @@ node_modules/grunt-browser-sync
 node_modules/grunt-contrib-cssmin
 
 .htaccess
+
+scss/layout/_old-navigation.scss
+scss/layout/_old-header.scss
+scss/layout/_ref-nav.scss
