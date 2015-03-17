@@ -11,12 +11,12 @@
 
 
 // hide checkbox trigger for browsers with js and above 800px
-@media screen and (min-width: 50em) {
+
   .fn-navTrigger__no-js {
     display: none;
     visibility: hidden;
   }
-}
+
 
 // display the checkbox under 800px
 @media screen and (max-width: 49.9375em) {
