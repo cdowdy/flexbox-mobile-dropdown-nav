@@ -1,7 +1,7 @@
 # This CSS uses the un-prefixed version of flexbox.  
 Only modern browsers using the un-prefixed version will get the flexbox layout (Android 4.4+, Internet Explorer 11). Every browser that doesn't support ``display: flex`` will use the ```.no-flexbox``` class.  
 
-**rem units are also used so Internet Explorer 8 and ~~Opera Mini are~~ not supported.**  
+**rem units are also used so Internet Explorer 8 ~~and Opera Mini are~~ not supported.**  
 Opera Mini now has [rem support and full flexbox support](https://dev.opera.com/blog/opera-mini-server-upgrade/)
 
 For Example:
