@@ -4,5 +4,7 @@ p {
   font-size: 1rem;
   line-height: $base-line-height;
   margin-bottom: 1.25rem;
-  text-rendering: optimizeLegibility;
+  // switched from optimizeLegibility to auto
+  // https://bocoup.com/weblog/text-rendering/
+  text-rendering: auto;
 }
