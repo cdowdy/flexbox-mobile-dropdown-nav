@@ -21,7 +21,7 @@ html {
 // base styles
 @import "base/reset";
 // dont import a11y yet.. classes aren't used on the page yet
-//@import "base/a11y";
+@import "base/a11y";
 //@import "base/typography";
 
 // layout
@@ -29,4 +29,3 @@ html {
 @import "layout/navigation";
 @import "layout/old-browsers";
 @import "layout/no-js";
-
