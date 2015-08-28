@@ -1,33 +1,71 @@
-/** ================================================================================================================= *\
-  *                                                                                                                   *\
-  *           Flexbox navigation styles
+/** ================================================================================================================= *  *                                                                                                                   *  *           Flexbox navigation styles
   *
   *   1.  Header styles is strictly for the <header> element and items with .fn-header class
   *   2.  Navigation styles is strictly for the <nav> and <ul> items with .fn-nav class
   *
   *   Cory Dowdy March 10th, 2015
-  *                                                                                                                   *\
- \* ================================================================================================================= */
+  *                                                                                                                   * \* ================================================================================================================= */
 /* removes delay in dropdown on windows phone 8.1*/
 /* also know as the 300ms delay for touch devices */
 html {
   touch-action: manipulation; }
 
-html, body {
+html,
+body {
   height: 100%;
   padding: 0;
   margin: 0; }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box; }
 
 /* below here is used in the demo page only */
-div, ul, li, h1, p {
+div,
+ul,
+li,
+h1,
+p {
   margin: 0;
   padding: 0; }
 
-footer, main {
+footer,
+main {
   display: block; }
+
+/* visually hide content */
+/*http://developer.yahoo.com/blogs/ydn/posts/2012/10/clip-your-hidden-content-for-better-accessibility/*/
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden; }
+
+/* hide content from the screen and screen readers */
+/* http://www.456bereastreet.com/archive/200711/screen_readers_sometimes_ignore_displaynone/ */
+.hidden {
+  display: none;
+  visibility: hidden; }
+
+/* skip to content link */
+/* http://webaim.org/techniques/css/invisiblecontent/#skipnavlinks */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
+  .skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto; }
 
 /* flexnav header "container" */
 .fn-header {
@@ -80,8 +118,10 @@ footer, main {
 .fn-header__button {
   background: none;
   border: 0.125rem solid;
-  color: #ECF0F1; }
-  .fn-header__button:hover, .fn-header__button:focus {
+  color: #ECF0F1;
+  font-size: 4.5vw; }
+  .fn-header__button:hover,
+  .fn-header__button:focus {
     background-color: #81cfe0;
     color: #1c2833;
     border: 0.125rem solid #ECF0F1; }
@@ -134,19 +174,20 @@ footer, main {
 
 /* navigation list item */
 .fn-navigation__item {
-  padding: 0.9375rem 1.25rem; }
+  padding: 0.3125rem 0; }
   .fn-navigation__item:focus {
     outline: 1px solid #81cfe0; }
-  .fn-navigation__item:hover, .fn-navigation__item:focus, .fn-navigation__item:active {
-    background-color: #81cfe0; }
-    .fn-navigation__item:hover a, .fn-navigation__item:focus a, .fn-navigation__item:active a {
-      color: #1c2833; }
 
 .fn-navigation__item a {
   color: #ECF0F1;
   line-height: inherit;
-  text-decoration: none; }
-  .fn-navigation__item a:hover, .fn-navigation__item a:focus, .fn-navigation__item a:active {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  padding: 0.9375rem 1.25rem; }
+  .fn-navigation__item a:hover,
+  .fn-navigation__item a:focus,
+  .fn-navigation__item a:active {
     background-color: #81cfe0;
     color: #1c2833;
     outline: 1px solid #81cfe0; }
@@ -213,6 +254,9 @@ footer, main {
   visibility: hidden; }
 
 @media screen and (max-width: 49.9375em) {
+  .no-js .fn-header__button {
+    display: none;
+    visibility: hidden; }
   .no-js .fn-navTrigger__no-js {
     clip: rect(0px, 0px, 0px, 0px);
     position: absolute;
