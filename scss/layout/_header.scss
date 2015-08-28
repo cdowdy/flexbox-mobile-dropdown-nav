@@ -58,6 +58,7 @@
 .fn-header__button {
   @include border-button();
   color: $header-nav-link-color;
+  font-size: 4.5vw; // maybe viewport widths isnt' the way to go here?
   &:hover,
   &:focus {
     background-color: $header-nav-list-item-bg-hover;

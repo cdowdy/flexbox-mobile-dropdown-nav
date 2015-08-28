@@ -20,6 +20,14 @@
 
 // display the checkbox under 800px
 @media screen and (max-width: 49.9375em) {
+
+  // hide the button that works with js
+  .no-js .fn-header__button {
+    display: none;
+    visibility: hidden;
+  }
+
+
   // clip (hide) the checkbox under 800px
   .no-js .fn-navTrigger__no-js {
     clip: rect(0px, 0px, 0px, 0px);
