@@ -3,8 +3,9 @@
 // http://a11yproject.com/posts/how-to-hide-content/
 
 /* visually hide content */
+/*http://developer.yahoo.com/blogs/ydn/posts/2012/10/clip-your-hidden-content-for-better-accessibility/*/
 .visually-hidden,
-%visually-hidden { /*http://developer.yahoo.com/blogs/ydn/posts/2012/10/clip-your-hidden-content-for-better-accessibility/*/
+%visually-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
@@ -30,7 +31,8 @@
 // <a class="skip-link" href="#">text</a>
 /* skip to content link */
 /* http://webaim.org/techniques/css/invisiblecontent/#skipnavlinks */
-.skip-link {
+.skip-link,
+%skip-link {
   position: absolute;
   left: -10000px;
   top: auto;
