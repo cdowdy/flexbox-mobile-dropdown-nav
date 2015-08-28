@@ -1,7 +1,8 @@
 # This CSS uses the un-prefixed version of flexbox.  
 Only modern browsers using the un-prefixed version will get the flexbox layout (Android 4.4+, Internet Explorer 11). Every browser that doesn't support ``display: flex`` will use the ```.no-flexbox``` class.  
 
-**rem units are also used so Internet Explorer 8 and Opera Mini are not supported.**
+**rem units are also used so Internet Explorer 8 ~~and Opera Mini are~~ not supported.**  
+Opera Mini now has [rem support and full flexbox support](https://dev.opera.com/blog/opera-mini-server-upgrade/)
 
 For Example:
 ```css  
@@ -34,7 +35,7 @@ instead of something as follows for wide browser range of flexbox support and su
     height:100%
 }
 ```  
-## It also contains fallbacks for browsers that don't any verison of  flexbox.  
+## It also contains fallbacks for browsers that don't recognize any verison of  flexbox.  
 example:  
 ```css  
 @media screen and (min-width: 50em) {
@@ -57,4 +58,4 @@ has a fallback using modernizr as follows:
     margin-top: 0.9375rem; }
 }  
 ```  
-You can use this file since it has ```.no-flexbox``` and ```.no-mediaqueries``` but **rem units are still used you will have some layout issues in IE8**.
+You can use this file since it has ```.no-flexbox``` and ```.no-mediaqueries``` but **rem units are still used you will have some layout issues in IE8**. Hopefully you're lucky enough not to have to support anything less than IE 9 but that's not always the case.
