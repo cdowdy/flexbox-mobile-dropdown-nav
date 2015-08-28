@@ -58,19 +58,20 @@
 
 /* navigation list item */
 .fn-navigation__item {
-  padding: rem-calc(15) rem-calc(20);
+  //padding: rem-calc(15) rem-calc(20);
+  padding: rem-calc(5) 0;
   &:focus {
     outline: 1px solid $header-nav-list-item-bg-hover;
   }
 
-  &:hover,
-  &:focus,
-  &:active {
-    background-color: $header-nav-list-item-bg-hover;
-    a {
-      color: $header-nav-anchor-color-hover;
-    }
-  }
+  //&:hover,
+  //&:focus,
+  //&:active {
+  //  background-color: $header-nav-list-item-bg-hover;
+  //  a {
+  //    color: $header-nav-anchor-color-hover;
+  //  }
+  //}
 }
 
 // for anchor links inside the unordered list in the <nav> element
@@ -79,6 +80,9 @@
     color: $header-nav-link-color;
     line-height: inherit;
     text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    padding: rem-calc(15) rem-calc(20);
     &:hover,
     &:focus,
     &:active {
