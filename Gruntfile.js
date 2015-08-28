@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                 },
                 options: {
                     watchTask: true, // < VERY important
-                    proxy: "localhost",
+                    proxy: "flexboxnav.dev",
                     files: ["css/*.css", "*.html", "/js/**/*.js"]
                 }
             }
@@ -57,8 +57,8 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     //'dist/css/navigation.min.css': ['css/navigation.min.css'],
-                    'dist/css/flexbox-only/nav-flexbox-only.min.css' : ['dist/css/flexbox-only/nav-flexbox-only.css'],
-                    'dist/css/no-prefixes-with-fallback/navigation.unprefixed.min.css' : ['css/navigation.unprefixed.css']
+                    'dist/css/flexbox-only/nav-flexbox-only.<%= grunt.template.today("dd-mm-yyyy") %>.min.css' : ['dist/css/flexbox-only/nav-flexbox-only.css'],
+                    'dist/css/no-prefixes-with-fallback/navigation.unprefixed.<%= grunt.template.today("dd-mm-yyyy") %>.min.css' : ['css/navigation.unprefixed.css']
                 }
             }
         },
@@ -72,8 +72,8 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'dist/js/navigation.min.js': ['js/navigation.js'],
-                    'dist/js/navigation.android-ie8.min.js' : ['js/classList.poly.js', 'js/navigation.js']
+                    'dist/js/navigation.<%= grunt.template.today("dd-mm-yyyy") %>.min.js': ['js/navigation.js'],
+                    'dist/js/navigation.android-ie8.<%= grunt.template.today("dd-mm-yyyy") %>.min.js' : ['js/classList.poly.js', 'js/navigation.js']
                 }
             }
         },
@@ -105,27 +105,27 @@ module.exports = function(grunt) {
                     opacity: true
                 },
                 files: {
-                    'dist/css/navigation.min.css': 'css/navigation.unprefixed.css'
+                    'dist/css/navigation.<%= grunt.template.today("dd-mm-yyyy") %>.min.css': 'css/navigation.unprefixed.css'
                 }
             }
 
         },
 
-        filerev: {
-            options: {
-                algorithm: 'md5',
-                length: 8
-            },
-            no_prefix: {
-                src: 'dist/css/no-prefixes-with-fallback/*.css'
-            },
-            flex_only: {
-                src: 'dist/css/flexbox-only/*.css'
-            },
-            dist: {
-                src: 'dist/css/*.css'
-            }
-        }
+        //filerev: {
+        //    options: {
+        //        algorithm: 'md5',
+        //        length: 8
+        //    },
+        //    no_prefix: {
+        //        src: 'dist/css/no-prefixes-with-fallback/*.css'
+        //    },
+        //    flex_only: {
+        //        src: 'dist/css/flexbox-only/*.css'
+        //    },
+        //    dist: {
+        //        src: 'dist/css/*.css'
+        //    }
+        //}
     });
 
     grunt.loadNpmTasks('grunt-sass');
@@ -136,7 +136,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-pleeease');
     grunt.loadNpmTasks('grunt-filerev');
 
-    grunt.registerTask('build', ['sass', 'uglify:dist', 'pleeease:dist', 'cssmin:dist', 'filerev']);
+    grunt.registerTask('build', ['sass', 'uglify:dist', 'pleeease:dist', 'cssmin:dist']);
     grunt.registerTask('dev', ['sass', 'browserSync', 'watch']);
     grunt.registerTask('default', ['build','browserSync','watch']);
 };
