@@ -6,7 +6,7 @@
   <title>Flexbox Mobile Dropdown Nav</title>
 
   <!-- flexbox nav css -->
-  <link rel="stylesheet" href="dist/css/navigation.min.d9b821b2.css">
+  <link rel="stylesheet" href="dist/css/navigation.28-08-2015.min.css">
   <!-- demo css -->
   <link rel="stylesheet" href="css/demo.css"/>
   <style>
@@ -32,9 +32,15 @@
 <header class="fn-header" id="js-header">
   <div class="fn-header__title-container">
     <h1 class="fn-header__name">Flexbox Nav</h1>
+    <button id="fn-header__button"
+            class="fn-header__button"
+            aria-label="Menu"
+            aria-expanded="false"
+            aria-controls="js-nav">Menu &#x2261;
+    </button>
   </div>
   <input type="checkbox" id="fn-noJs" class="fn-navTrigger__no-js"/>
-  <label id="fn-noJs_label" for="fn-noJs"></label>
+  <label id="fn-noJs_label" for="fn-noJs"><span class="visually-hidden">Menu Button</span></label>
   <nav class="fn-nav-container" role="navigation">
     <ul class="fn-navigation" id="js-nav">
       <li class="fn-navigation__item">
@@ -58,7 +64,7 @@
 </header>
 <!-- /.fn-header -->
 
-<main class="row" id="main">
+<main class="row" id="js-main" role="main">
   <!-- site content -->
   <div class="content">
     <h2>Flexbox Mobile Navigation With Dropdown</h2>
@@ -127,7 +133,7 @@
 <!-- /main -->
 
 
-<footer class="row">
+<footer class="row" role="contentinfo">
   <div class="content">
     <hr/>
     <ul class="contact-list">
@@ -138,6 +144,6 @@
   </div>
 
 </footer>
-<script src="dist/js/navigation.android-ie8.min.js" async defer></script>
+<script src="dist/js/navigation.android-ie8.28-08-2015.min.js" async defer></script>
 </body>
 </html>
